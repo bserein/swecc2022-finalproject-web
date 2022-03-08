@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Login from './scenes/Login';
+import Signup from './scenes/SignUp';
+import Main from './scenes/Main';
 
 function App() {
+  const [token, setToken] = useState();
+  const [isUser, setIsUser] = useState();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section>
+    {!token
+      ? isUser
+        ? <Login setIsUser={setIsUser} setToken={setToken} />
+        : <Signup setIsUser={setIsUser} setToken={setToken} />
+      : <Main token={token}/>
+    }
+    </section>
   );
 }
 

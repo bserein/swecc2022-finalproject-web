@@ -10,7 +10,7 @@ export default function Main(){
         <>
         <Layout>
           <Header style={{ position: "fixed", zIndex: 999, width: "100%" }}>
-            <Link to={`/`}>
+            <Link to={`/cars`}>
 
             </Link>
           </Header>

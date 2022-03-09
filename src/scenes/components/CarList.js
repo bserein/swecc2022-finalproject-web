@@ -21,7 +21,7 @@ export default function CarList(){
         {cars.map((car) => {
           return (
             <Col key={car.id}>
-                <Link to={`/cars/:id`}>
+                <Link to={`/cars/${car.id}`}>
               <Card
                 hoverable
                 cover={<img alt={`pictures of ${car.description}`} src={car.photo}/>}

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import { Rate, Button } from "antd";
+import { useNavigate, useParams } from "react-router-dom";
+import { Rate, Button, message, Space } from "antd";
 
-export default function CarDetail() {
-  const [car, setCar] = useState({}); 
+
+export default function CarDetail({car, setCar}) {
   const [rating, setRating] = useState();
   const params = useParams();
+  const navigate = useNavigate();
 
   const handleRating = () => {
     fetch(`http://localhost:4325/cars/${params.id}`, {
@@ -15,8 +16,10 @@ export default function CarDetail() {
       },
       body: JSON.stringify({ rating: rating }),
     })
-    .then(response => response.json())
+    .then((response) => response.json())
     .then(() => setRating(0))
+    .then(navigate('/cars'))
+    .then(success => message.success('Thank you for your rating'))
     .catch(alert)
   }
 
@@ -30,6 +33,14 @@ export default function CarDetail() {
   if (!car.photo) {
     return <p>Loading</p>;
   }
+
+  const success = () => {
+    message.success('This is a success message');
+  };
+  
+  const error = () => {
+    message.error('This is an error message');
+  };
 
   return (
     <section className="detail-wrapper">
@@ -60,7 +71,8 @@ export default function CarDetail() {
       <div className="submit-rating">
           <p> Please Rate Your Opinion On The Selected Vehicles </p>
       <Rate value={rating} onChange={(value) => setRating(value)} />
-      <Button onClick={handleRating} type="primary" size={"large"} style={{marginTop: '20px'}}>Submit Rating</Button>
+      <Button onClick={handleRating} type="primary" size={"large"} style={{marginTop: '20px'}}
+      > Submit Rating</Button>
       </div>
       </div>
     </section>

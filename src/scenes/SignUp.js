@@ -1,11 +1,13 @@
 import { useState } from "react";
 import bcrypt from "bcryptjs";
+import { useNavigate } from "react-router-dom";
 
 const salt = "$2b$10$WaC2/VZrG3qSl15nAfN0Pu"
 
 export default function Signup({setToken, setIsUser}){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate()
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -18,7 +20,10 @@ export default function Signup({setToken, setIsUser}){
             body: JSON.stringify({email, password: hashedPassword})
         })
         .then(response => response.json())
-        .then(data => setToken(data.token))
+        .then(data => {
+            setToken(data.token);
+            navigate('/cars')
+        })
         .catch(err => alert(err))
     }
 

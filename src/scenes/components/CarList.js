@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Card, Rate, Col, Row } from 'antd';
 import { Link } from "react-router-dom";
 
 const { Meta } = Card;
 
 
-export default function CarList(){
-    const [cars, setCars] = useState([]);
+export default function CarList({cars, setCars}){
   
     useEffect(() => {
         fetch("http://localhost:4325/cars")
@@ -15,7 +14,9 @@ export default function CarList(){
           .catch(alert);
       }, []);
 
-    return (
+    return ( 
+        <>
+       
         <div className="cards-wrapper">
       <Row gutter={16}>
         {cars.map((car) => {
@@ -35,5 +36,6 @@ export default function CarList(){
         })}
       </Row>
     </div>
+    </>
     )
 }

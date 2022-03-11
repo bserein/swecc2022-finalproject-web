@@ -9,7 +9,7 @@ const { Header, Footer, Content } = Layout;
 
 export default function Main(){
   const [cars, setCars] = useState([]);
-  const [car, setCar] = useState({});
+  
   const navigate = useNavigate();
 
   const AddNew = () => {
@@ -20,7 +20,7 @@ export default function Main(){
         <Layout>
           <Header style={{ position: "fixed", zIndex: 999, width: "100%" }}>
             <Link to={`/cars`}>
-
+        
             </Link>
               <Link to="/cars/addcar">
               </Link>
@@ -30,8 +30,8 @@ export default function Main(){
           <Content>
             <Routes>
               <Route path="/cars" element={<CarList cars={cars} setCars={setCars} />} />
-              <Route path="/cars/:id" element={<CarDetail car={car} setCar={setCar}/>} />
-              <Route path="/cars/addcar" element={<AddNewCar car={car} setCar={setCar}/>} />
+              <Route path="/cars/:id" element={<CarDetail />} />
+              <Route path="/cars/addcar" element={<AddNewCar />} />
             </Routes>
           </Content>
           <Footer style={{ textAlign: "center" }}>

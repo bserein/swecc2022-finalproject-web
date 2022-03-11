@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { Form, Input, Button, message } from "antd";
 import { useNavigate } from "react-router-dom";
 
-export default function AddNewCar({ car, setCar }) {
-  // const [btnDisabled, setBtnDisabled] = useState(true);
+export default function AddNewCar() {
   const navigate = useNavigate();
 
   const [make, setMake] = useState();
@@ -16,22 +15,11 @@ export default function AddNewCar({ car, setCar }) {
   const [mpg, setMpg] = useState();
   const [fuelCapacity, setFuelCapacity] = useState();
   const [seatingCapacity, setSeatingCapacity] = useState();
-  // const [newCar, setNewCar] = useState({
-  //       make: "",
-  //       model: "",
-  //       image: "",
-  //       description: "",
-  //       topSpeed: "",
-  //       horsepower: "",
-  //       msrp: "",
-  //       mpg: "",
-  //       fuelCapacity: "",
-  //       seatingCapacity: ""
-  // })
+  
 
   const addNewCarInfo = (event) => {
     event.preventDefault();
-    fetch("http://localhost:4325/cars/addcar", {
+    fetch("https://final-project-bas.uk.r.appspot.com/cars/addcar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -55,13 +43,6 @@ export default function AddNewCar({ car, setCar }) {
           );       
   };
 
-//   useEffect(() => {
-//     if(newCar.make && newCar.model && newCar.image && newCar.description && newCar.topSpeed && newCar.horsepower && newCar.msrp
-//       && newCar.mpg && newCar.fuelCapacity && newCar.seatingCapacity !== undefined) {
-//         setBtnDisabled(false)
-//     }
-// }, [newCar])
-
 
   return (
     <>
@@ -69,18 +50,21 @@ export default function AddNewCar({ car, setCar }) {
       <Form>
         <Form.Item label="Make">
           <Input
+          required
             placeholder="Please input the car make"
             onChange={(event) => setMake(event.target.value)}
           />
         </Form.Item>
         <Form.Item label="Model:">
           <Input
+          required
             placeholder="Please input the car model"
             onChange={(event) => setModel(event.target.value)}
           />
         </Form.Item>
         <Form.Item label="Photo">
           <Input
+          required
             placeholder="Please input the cars photo URL"
             type="url"
             onChange={(event) => setImage(event.target.value)}
@@ -88,12 +72,14 @@ export default function AddNewCar({ car, setCar }) {
         </Form.Item>
         <Form.Item label="Description">
           <Input
+          required
             placeholder="Please input the car photos description to the best of your abilities"
             onChange={(event) => setDescription(event.target.value)}
           />
         </Form.Item>
         <Form.Item label="Top Speed">
           <Input
+          required
             placeholder="Please input the cars top speed"
             type="numeric"
             onChange={(event) => setTopSpeed(event.target.value)}
@@ -101,24 +87,28 @@ export default function AddNewCar({ car, setCar }) {
         </Form.Item>
         <Form.Item label="Horsepower">
           <Input
+          required
             placeholder="Please input the cars estimated horsepower "
             onChange={(event) => setHorsepower(event.target.value)}
           />
         </Form.Item>
         <Form.Item label="MSRP">
           <Input
+          required
             placeholder="Please input the cars Manufactured Sale Retail Price"
             onChange={(event) => setMsrp(event.target.value)}
           />
         </Form.Item>
         <Form.Item label="MPG">
           <Input
+          required
             placeholder="Please input the cars mpg in city and highway"
             onChange={(event) => setMpg(event.target.value)}
           />
         </Form.Item>
         <Form.Item label="Fuel Capacity">
           <Input
+          required
             placeholder="Please input the cars fuel tank capacity in gallons"
             type="numeric"
             onChange={(event) => setFuelCapacity(event.target.value)}
@@ -126,6 +116,7 @@ export default function AddNewCar({ car, setCar }) {
         </Form.Item>
         <Form.Item label="Seating Capacity">
           <Input
+          required
             placeholder="Please input the cars seating capacity"
             type="numeric"
             onChange={(event) => setSeatingCapacity(event.target.value)}
@@ -135,7 +126,6 @@ export default function AddNewCar({ car, setCar }) {
           <Button
             type="submit"
             onClick={addNewCarInfo}
-            // disabled={btnDisabled}
           >
             Submit
           </Button>

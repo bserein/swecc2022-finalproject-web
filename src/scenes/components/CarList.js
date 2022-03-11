@@ -8,7 +8,7 @@ const { Meta } = Card;
 export default function CarList({cars, setCars}){
   
     useEffect(() => {
-        fetch("http://localhost:4325/cars")
+        fetch("https://final-project-bas.uk.r.appspot.com/cars")
           .then((response) => response.json())
           .then((data) => setCars(data))
           .catch(alert);

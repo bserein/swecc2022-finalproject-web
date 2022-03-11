@@ -12,7 +12,7 @@ export default function Signup({setToken, setIsUser}){
     const handleSubmit = (event) => {
         event.preventDefault()
         const hashedPassword = bcrypt.hashSync(password, salt)
-        fetch("http://localhost:4325/users", {
+        fetch("https://final-project-bas.uk.r.appspot.com/users", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

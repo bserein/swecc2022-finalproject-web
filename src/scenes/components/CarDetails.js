@@ -3,13 +3,19 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Rate, Button, message } from "antd";
 
 
-export default function CarDetail({car, setCar}) {
-  const [rating, setRating] = useState();
+export default function CarDetail() {
+  const [car, setCar] = useState({});
+  const [rating, setRating] = useState(0);
   const params = useParams();
   const navigate = useNavigate();
 
   const handleRating = () => {
-    fetch(`http://localhost:4325/cars/${params.id}`, {
+    if(rating === 0){
+      message.error("uh oh looks like you forgot to put a rating")
+      return
+    }
+
+    fetch(`https://final-project-bas.uk.r.appspot.com/cars/${params.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -17,18 +23,18 @@ export default function CarDetail({car, setCar}) {
       body: JSON.stringify({ rating: rating }),
     })
     .then((response) => response.json())
-    .then(() => setRating(0))
+    // .then(() => setRating())
     .then(navigate('/cars'))
     .then(success => message.success('Thank you for your rating'))
     .catch(error => message.error("uh oh looks like you forgot to put a rating"))
   }
 
   useEffect(() => {
-    fetch(`http://localhost:4325/cars/${params.id}`)
+    fetch(`https://final-project-bas.uk.r.appspot.com/cars/${params.id}`)
       .then((response) => response.json())
       .then((data) => setCar(data))
       .catch(alert);
-  }, [rating]);
+  }, []);
 
   if (!car.photo) {
     return <p>Loading</p>;

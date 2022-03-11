@@ -15,7 +15,7 @@ export default function Login({setToken, setIsUser}){
     const handleSubmit = (event) => {
         event.preventDefault()
         const hashedPassword = bcrypt.hashSync(password, salt)
-        fetch("http://localhost:4325/users/login", {
+        fetch("https://final-project-bas.uk.r.appspot.com/users/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

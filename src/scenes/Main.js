@@ -31,7 +31,7 @@ export default function Main(){
             <Routes>
               <Route path="/cars" element={<CarList cars={cars} setCars={setCars} />} />
               <Route path="/cars/:id" element={<CarDetail car={car} setCar={setCar}/>} />
-              <Route path="/cars/addcar" element={<AddNewCar />} />
+              <Route path="/cars/addcar" element={<AddNewCar car={car} setCar={setCar}/>} />
             </Routes>
           </Content>
           <Footer style={{ textAlign: "center" }}>

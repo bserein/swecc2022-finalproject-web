@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Rate, Button, message, Space } from "antd";
+import { Rate, Button, message } from "antd";
 
 
 export default function CarDetail({car, setCar}) {
@@ -20,7 +20,7 @@ export default function CarDetail({car, setCar}) {
     .then(() => setRating(0))
     .then(navigate('/cars'))
     .then(success => message.success('Thank you for your rating'))
-    .catch(alert)
+    .catch(error => message.error("uh oh looks like you forgot to put a rating"))
   }
 
   useEffect(() => {
@@ -34,13 +34,6 @@ export default function CarDetail({car, setCar}) {
     return <p>Loading</p>;
   }
 
-  const success = () => {
-    message.success('This is a success message');
-  };
-  
-  const error = () => {
-    message.error('This is an error message');
-  };
 
   return (
     <section className="detail-wrapper">

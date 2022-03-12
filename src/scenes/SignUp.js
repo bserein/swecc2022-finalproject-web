@@ -8,7 +8,7 @@ export default function Signup({setToken, setIsUser}){
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate()
-
+  
     const handleSubmit = (event) => {
         event.preventDefault()
         const hashedPassword = bcrypt.hashSync(password, salt)
@@ -41,7 +41,7 @@ export default function Signup({setToken, setIsUser}){
          </form> <br />
          <button onClick={() => setIsUser(true)}>
             Login 
-            </button>   
+            </button>
         </>
     )
 }

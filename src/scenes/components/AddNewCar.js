@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Form, Input, Button, message } from "antd";
 import { useNavigate } from "react-router-dom";
 
@@ -18,6 +18,10 @@ export default function AddNewCar() {
   
 
   const addNewCarInfo = (event) => {
+    // if( === ""){
+    //   message.error("uh oh looks like you forgot to put a rating")
+    //   return
+    // }
     event.preventDefault();
     fetch("https://final-project-bas.uk.r.appspot.com/cars/addcar", {
       method: "POST",
@@ -43,29 +47,34 @@ export default function AddNewCar() {
           );       
   };
 
+  const goBackHandle = () => {
+    navigate('/cars')
+  }
 
   return (
     <>
-      <h1 style={{ marginTop: 60 }}>you made it</h1>
+      <button onClick={goBackHandle} style={{marginTop: 70}}> Back to Home</button>
+      <div className="new-car-form">
+      <h3 style={{textAlign: "center"}}>Please Be As Accurate As You Can</h3>
       <Form>
         <Form.Item label="Make">
           <Input
           required
-            placeholder="Please input the car make"
+            placeholder="Example: Toyota"
             onChange={(event) => setMake(event.target.value)}
           />
         </Form.Item>
         <Form.Item label="Model:">
           <Input
           required
-            placeholder="Please input the car model"
+            placeholder="Example: Camry"
             onChange={(event) => setModel(event.target.value)}
           />
         </Form.Item>
         <Form.Item label="Photo">
           <Input
           required
-            placeholder="Please input the cars photo URL"
+            placeholder="Please Input The Car Photos URL"
             type="url"
             onChange={(event) => setImage(event.target.value)}
           />
@@ -73,14 +82,14 @@ export default function AddNewCar() {
         <Form.Item label="Description">
           <Input
           required
-            placeholder="Please input the car photos description to the best of your abilities"
+            placeholder="Please Input The Car Photos Description To The Best Of Your Abilities"
             onChange={(event) => setDescription(event.target.value)}
           />
         </Form.Item>
         <Form.Item label="Top Speed">
           <Input
           required
-            placeholder="Please input the cars top speed"
+            placeholder="Example: 134"
             type="numeric"
             onChange={(event) => setTopSpeed(event.target.value)}
           />
@@ -88,28 +97,28 @@ export default function AddNewCar() {
         <Form.Item label="Horsepower">
           <Input
           required
-            placeholder="Please input the cars estimated horsepower "
+            placeholder="Example: 301"
             onChange={(event) => setHorsepower(event.target.value)}
           />
         </Form.Item>
         <Form.Item label="MSRP">
           <Input
           required
-            placeholder="Please input the cars Manufactured Sale Retail Price"
+            placeholder="Example: 26,320"
             onChange={(event) => setMsrp(event.target.value)}
           />
         </Form.Item>
         <Form.Item label="MPG">
           <Input
           required
-            placeholder="Please input the cars mpg in city and highway"
+            placeholder="Example: 28 / 39"
             onChange={(event) => setMpg(event.target.value)}
           />
         </Form.Item>
         <Form.Item label="Fuel Capacity">
           <Input
           required
-            placeholder="Please input the cars fuel tank capacity in gallons"
+            placeholder="Example: 15.8"
             type="numeric"
             onChange={(event) => setFuelCapacity(event.target.value)}
           />
@@ -117,7 +126,7 @@ export default function AddNewCar() {
         <Form.Item label="Seating Capacity">
           <Input
           required
-            placeholder="Please input the cars seating capacity"
+            placeholder="Example: 5"
             type="numeric"
             onChange={(event) => setSeatingCapacity(event.target.value)}
           />
@@ -126,11 +135,13 @@ export default function AddNewCar() {
           <Button
             type="submit"
             onClick={addNewCarInfo}
+            style={{padding: "20px 400px", justifyContent: "center", alignSelf: "center", fontSize: "Large", fontWeight: 300, textAlign: "center" }}
           >
             Submit
           </Button>
         </Form.Item>
       </Form>
+      </div>
     </>
   );
 }

@@ -18,13 +18,12 @@ export default function Main(){
     return (
         <>
         <Layout>
-          <Header style={{ position: "fixed", zIndex: 999, width: "100%" }}>
+          <Header style={{ position: "fixed", zIndex: 999, width: "100%", backgroundColor: "darkorange"}}>
             <Link to={`/cars`}>
-        
+            <h2 >Car Hopper</h2>
             </Link>
-              <Link to="/cars/addcar">
-              </Link>
-              <button onClick={AddNew}>Add New Car</button>
+              
+              <button onClick={AddNew} >Add New Car</button>
             
           </Header>
           <Content>

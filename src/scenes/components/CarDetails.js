@@ -14,7 +14,6 @@ export default function CarDetail() {
       message.error("uh oh looks like you forgot to put a rating")
       return
     }
-
     fetch(`https://final-project-bas.uk.r.appspot.com/cars/${params.id}`, {
       method: "PATCH",
       headers: {
@@ -27,6 +26,10 @@ export default function CarDetail() {
     .then(navigate('/cars'))
     .then(success => message.success('Thank you for your rating'))
     .catch(error => message.error("uh oh looks like you forgot to put a rating"))
+  }
+
+  const goBackHandle = () => {
+    navigate('/cars')
   }
 
   useEffect(() => {
@@ -42,7 +45,9 @@ export default function CarDetail() {
 
 
   return (
-    <section className="detail-wrapper">
+    <>
+    <button onClick={goBackHandle} style={{marginTop: 70}}> Back to Home</button>
+    <section className="detail-wrapper" style={{marginTop: 20}}>
       <img src={car.photo} alt={`This photo shows a ${car.description}`} />
       <div className="car-detail-wrapper">
       <h1 style={{ fontSize: 42, fontWeight: 800, marginBottom: 0 }}>
@@ -75,5 +80,6 @@ export default function CarDetail() {
       </div>
       </div>
     </section>
+    </>
   );
 }

@@ -3,8 +3,6 @@ import bcrypt from "bcryptjs";
 import { useNavigate } from "react-router-dom";
 
 
-
-
 const salt = "$2b$10$WaC2/VZrG3qSl15nAfN0Pu"
 
 export default function Login({setToken, setIsUser}){
@@ -22,6 +20,7 @@ export default function Login({setToken, setIsUser}){
             },
             body: JSON.stringify({ email, password: hashedPassword})
         })
+        localStorage.setItem('email', email)
         .then(response => response.json())
         .then(data => {
             setToken(data.token);
@@ -29,10 +28,6 @@ export default function Login({setToken, setIsUser}){
         })
         .catch(err => alert(err))
     }
-
-
-
-
 
     return (
         <>

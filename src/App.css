@@ -1,16 +1,9 @@
 .ant-layout-header {
-  height: 74px;
   display: flex;
-  align-items: center; /* this is vertically */
-  justify-content: center; /* this is for horizontally*/
-  background-color: rgb(255, 102, 0);
-  text-align: center;
-  font-size: large;
-  line-height: 1;
-}
-
-.ant-layout-header svg {
-  align-self: center;
+  /* align-items: center; this is vertically */
+  /* justify-content: center;  */
+  /* text-align: center; */
+  opacity: 95%
 }
 
 .cards-wrapper {
@@ -48,6 +41,7 @@
   height: 300px;
   object-fit: cover;
 }
+
 .ant-card-meta-title {
   font-weight: 700;
   font-size: 1.5rem;
@@ -60,29 +54,44 @@
 @media screen and (max-width: 580px) {
   .ant-col {
     width: 100%;
+  };
+  .new-car-form{
+    width: 100%
   }
 }
+
 @media screen and (min-width: 581px) {
   .ant-col {
     width: 40%;
   }
   .ant-card-meta-title {
     font-size: 1.25rem;
+  };
+  .new-car-form{
+    width: 100%
   }
 }
 
 @media screen and (min-width: 780px) {
   .ant-col {
     width: 29%;
+  };
+  .new-car-form{
+    width: 100%
   }
   
+}
+
+.new-car-form{
+    display: inline-flex;
+    flex-direction: column;
+    align-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+
 }
 
 .submit-rating {
   display: flex;
   flex-direction: column;
-}
-
-hr {
-  color:rgb(254, 86, 67)
 }

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Rate, Button, message } from "antd";
+import { Rate, Button, message, Carousel } from "antd";
 
 
 export default function CarDetail() {
@@ -11,7 +11,7 @@ export default function CarDetail() {
 
   const handleRating = () => {
     if(rating === 0){
-      message.error("uh oh looks like you forgot to put a rating")
+      message.error("Uh Oh Looks Like You Forgot To Put A Rating")
       return
     }
     fetch(`https://final-project-bas.uk.r.appspot.com/cars/${params.id}`, {
@@ -22,10 +22,8 @@ export default function CarDetail() {
       body: JSON.stringify({ rating: rating }),
     })
     .then((response) => response.json())
-    // .then(() => setRating())
     .then(navigate('/cars'))
-    .then(success => message.success('Thank you for your rating'))
-    .catch(error => message.error("uh oh looks like you forgot to put a rating"))
+    .then(success => message.success('Thank You For Your Rating'))
   }
 
   const goBackHandle = () => {
@@ -43,14 +41,26 @@ export default function CarDetail() {
     return <p>Loading</p>;
   }
 
-
   return (
     <>
     <button onClick={goBackHandle} style={{marginTop: 70}}> Back to Home</button>
     <section className="detail-wrapper" style={{marginTop: 20}}>
-      <img src={car.photo} alt={`This photo shows a ${car.description}`} />
+      <Carousel autoplay>
+    <div>
+      <img src={car.photo} alt={`This photo shows ${car.description}`} />
+    </div>
+    <div>
+    <img src={car.photo2} alt={`This photo shows ${car.description2}`} />
+    </div>
+    <div>
+    <img src={car.photo3} alt={`This photo shows ${car.description3}`} />
+    </div>
+    <div>
+    <img src={car.photo4} alt={`This photo shows ${car.description4}`} />
+    </div>
+  </Carousel>
       <div className="car-detail-wrapper">
-      <h1 style={{ fontSize: 42, fontWeight: 800, marginBottom: 0 }}>
+      <h1 style={{ fontSize: 42, fontWeight: 800, marginBottom: 0}}>
         {" "}
         {car.make} {' '} 
         {car.model}
@@ -62,7 +72,7 @@ export default function CarDetail() {
       <h3> {`Top Speed: ${car.topSpeed} mph`}</h3>
       <h3> {`Horsepower: ${car.horsepower} hp`}</h3>
       <h3> {`Fuel Tank Capacity: ${car.fuelCapacity} gallons`}</h3>
-      <h3> {`mpg city ${car.mpg} highway`}</h3>
+      <h3> {`MPG City ${car.mpg} Highway`}</h3>
       <h3> {`Seating Capacity: ${car.seatingCapacity}`}</h3>
       <hr />
       <h2 style={{ marginTop: "10px", fontSize: 28, fontWeight: 700 }}>

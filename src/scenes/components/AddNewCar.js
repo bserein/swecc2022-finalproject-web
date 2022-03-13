@@ -8,7 +8,13 @@ export default function AddNewCar() {
   const [make, setMake] = useState();
   const [model, setModel] = useState();
   const [image, setImage] = useState();
+  const [image2, setImage2] = useState();
+  const [image3, setImage3] = useState();
+  const [image4, setImage4] = useState();
   const [description, setDescription] = useState();
+  const [description2, setDescription2] = useState();
+  const [description3, setDescription3] = useState();
+  const [description4, setDescription4] = useState();
   const [topSpeed, setTopSpeed] = useState();
   const [horsepower, setHorsepower] = useState();
   const [msrp, setMsrp] = useState();
@@ -32,7 +38,13 @@ export default function AddNewCar() {
         make,
         model,
         photo: image,
+        photo2: image2,
+        photo3: image3,
+        photo4: image4,
         description,
+        description2,
+        description3,
+        description4,
         topSpeed,
         horsepower,
         msrp,
@@ -74,7 +86,7 @@ export default function AddNewCar() {
         <Form.Item label="Photo">
           <Input
           required
-            placeholder="Please Input The Car Photos URL"
+            placeholder="Please Input The Car Photos URL of The Front of the Car"
             type="url"
             onChange={(event) => setImage(event.target.value)}
           />
@@ -84,6 +96,51 @@ export default function AddNewCar() {
           required
             placeholder="Please Input The Car Photos Description To The Best Of Your Abilities"
             onChange={(event) => setDescription(event.target.value)}
+          />
+        </Form.Item>
+        <Form.Item label="Photo">
+          <Input
+          required
+            placeholder="Please Input The Car Photos URL of The Back of the Car"
+            type="url"
+            onChange={(event) => setImage2(event.target.value)}
+          />
+        </Form.Item>
+        <Form.Item label="Description">
+          <Input
+          required
+            placeholder="Please Input The Car Photos Description To The Best Of Your Abilities"
+            onChange={(event) => setDescription2(event.target.value)}
+          />
+        </Form.Item>
+        <Form.Item label="Photo">
+          <Input
+          required
+            placeholder="Please Input The Car Photos URL of The Front Interior of the Car"
+            type="url"
+            onChange={(event) => setImage3(event.target.value)}
+          />
+        </Form.Item>
+        <Form.Item label="Description">
+          <Input
+          required
+            placeholder="Please Input The Car Photos Description To The Best Of Your Abilities"
+            onChange={(event) => setDescription3(event.target.value)}
+          />
+        </Form.Item>
+        <Form.Item label="Photo">
+          <Input
+          required
+            placeholder="Please Input The Car Photos URL of The Back Interior of the Car"
+            type="url"
+            onChange={(event) => setImage4(event.target.value)}
+          />
+        </Form.Item>
+        <Form.Item label="Description">
+          <Input
+          required
+            placeholder="Please Input The Car Photos Description To The Best Of Your Abilities"
+            onChange={(event) => setDescription4(event.target.value)}
           />
         </Form.Item>
         <Form.Item label="Top Speed">

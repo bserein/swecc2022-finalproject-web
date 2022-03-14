@@ -23,7 +23,7 @@ export default function CarList({cars, setCars}){
 
     return ( 
         <>
-        <Select defaultValue="make" style={{ width: 120 }} onChange={handleChange}>
+        <Select defaultValue="make" style={{ width: 120, marginTop: "60px" }} onChange={handleChange}>
       <Option value="Audi">Audi</Option>
       <Option value="BMW">BMW</Option>
       <Option value="Chevrolet">Chevrolet</Option>

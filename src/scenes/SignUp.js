@@ -29,6 +29,7 @@ export default function Signup({setToken, setIsUser}){
 
     return (
         <>
+        <div style={{marginTop: "200px", justifyItems: "center", width: "100%", marginLeft: "600px"}}>
          <h1>Sign Up</h1>
          <form onSubmit={handleSubmit}>
              <label> Email:
@@ -42,6 +43,7 @@ export default function Signup({setToken, setIsUser}){
          <button onClick={() => setIsUser(true)}>
             Login 
             </button>
+            </div>
         </>
     )
 }

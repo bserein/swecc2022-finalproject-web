@@ -65,7 +65,7 @@ export default function AddNewCar() {
 
   return (
     <>
-      <button onClick={goBackHandle} style={{marginTop: 70}}> Back to Home</button>
+      <button onClick={goBackHandle}> Back to Home</button>
       <div className="new-car-form">
       <h3 style={{textAlign: "center"}}>Please Be As Accurate As You Can</h3>
       <Form>

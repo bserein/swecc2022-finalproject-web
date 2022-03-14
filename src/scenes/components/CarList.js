@@ -23,7 +23,6 @@ export default function CarList({cars, setCars}){
 
     return ( 
         <>
-        <button style={{marginTop: 70}}>I am Here</button>
         <Select defaultValue="make" style={{ width: 120 }} onChange={handleChange}>
       <Option value="Audi">Audi</Option>
       <Option value="BMW">BMW</Option>
@@ -112,7 +111,7 @@ export default function CarList({cars, setCars}){
       <Option value="Corolla">Corolla</Option>
       <Option value="Supra">Supra</Option>
     </OptGroup>
-  </Select>,
+  </Select>
       <Select
     mode="multiple"
     style={{ width: '100%' }}

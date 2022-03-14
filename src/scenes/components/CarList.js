@@ -10,32 +10,18 @@ export default function CarList(){
   const [filteredCars, setFilteredCars] = useState([]);
   const [carType,setCarType] = useState();
 
-const carModels = [
-  {label: 'Audi', value: 'Audi'},
-  {label: 'BMW', value: 'BMW'},
-  {label: 'Chevrolet', value: 'Chevrolet'},
-  {label: 'Dodge', value: 'Dodge'},
-  {label: 'Ford', value: 'Ford'},
-  {label: 'Honda', value: 'Honda'},
-  {label: 'Hyundai', value: 'Hyundai'},
-  {label: 'Jeep', value: 'Jeep'},
-  {label: 'Mazda', value: 'Mazda'},
-  {label: 'Mercedes-Benz', value: 'Mercedes-Benz'},
-  {label: 'Nissan', value: 'Nissan'},
-  {label: 'Porsche', value: 'Porsche'},
-  {label: 'Tesla', value: 'Tesla'},
-  {label: 'Toyota', value: 'Toyota'},
-]
-
   useEffect(() => {
     // filter cars here;
     console.log(`${carType} type changed`);
-    const filtered = !carModels
-    ? cars
-    : cars.filter((carType) =>
-        carType.make.includes(cars.make)
-      );
-  }, [carModels,])
+    if(carType && cars) {
+        const filtered = cars.filter((car) => {
+          return car.make === carType;
+        })
+        setFilteredCars(filtered);
+    } else {
+      setFilteredCars(cars);
+    }
+  }, [cars, carType])
   
     useEffect(() => {
         fetch("https://final-project-bas.uk.r.appspot.com/cars")
@@ -44,8 +30,7 @@ const carModels = [
           .catch(alert);
       }, []);
 
-      function handleChange(event) {
-        const value = event.target.value;
+      function handleChange(value) {
         console.log(`selected ${value}`)
         setCarType(value);
       }
@@ -53,6 +38,7 @@ const carModels = [
     return ( 
         <>
      <Select defaultValue="make" style={{ width: 120, marginTop: "70px" }} onChange={handleChange}>
+      <Option value="">All</Option>
       <Option value="Audi">Audi</Option>
       <Option value="BMW">BMW</Option>
       <Option value="Chevrolet">Chevrolet</Option>

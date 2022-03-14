@@ -7,13 +7,13 @@ import Header from "./Header";
 import Footer from "./Footer";
 
 export default function Main(){
-  const [cars, setCars] = useState([]);
+  
   
     return (
         <div style={{backgroundColor: "WhiteSmoke"}}>
        <Header />
             <Routes>
-              <Route path="/cars" element={<CarList cars={cars} setCars={setCars} />} />
+              <Route path="/cars" element={<CarList />} />
               <Route path="/cars/:id" element={<CarDetail />} />
               <Route path="/cars/addcar" element={<AddNewCar />} />
             </Routes>

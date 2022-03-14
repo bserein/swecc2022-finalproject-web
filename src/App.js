@@ -10,12 +10,13 @@ function App() {
 
   return (
     <section>
-    {!token
+    {/* {!token
       ? isUser
         ? <Login setIsUser={setIsUser} setToken={setToken} />
         : <Signup setIsUser={setIsUser} setToken={setToken} />
       : <Main token={token}/>
-    }
+    } */}
+    <Main />
     </section>
   );
 }

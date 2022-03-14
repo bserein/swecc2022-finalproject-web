@@ -75,15 +75,16 @@
 }
 
 .new-car-form{
-    display: inline-flex;
-    flex-direction: column;
-    align-content: space-around;
-    flex-wrap: wrap;
-    width: 100%;
-
+    max-width: 800px;
+    margin: 90px auto 20px;
+    background-color: white;
 }
 
 .submit-rating {
+  display: flex;
+  flex-direction: column;
+}
+.submit-form {
   display: flex;
   flex-direction: column;
 }

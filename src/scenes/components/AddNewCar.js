@@ -65,10 +65,10 @@ export default function AddNewCar() {
 
   return (
     <>
-      <button onClick={goBackHandle} style={{marginTop: "60px" }}> Back to Home</button>
+      <button onClick={goBackHandle} style={{marginTop: "70px" }}> Back to Home</button>
       <div className="new-car-form">
       <h3 style={{textAlign: "center"}}>Please Be As Accurate As You Can</h3>
-      <Form>
+      <Form >
         <Form.Item label="Make">
           <Input
           required
@@ -192,7 +192,7 @@ export default function AddNewCar() {
           <Button
             type="submit"
             onClick={addNewCarInfo}
-            style={{padding: "20px 400px", justifyContent: "center", alignSelf: "center", fontSize: "Large", fontWeight: 300, textAlign: "center" }}
+            style={{padding: "10px 350px", fontSize: "Large", fontWeight: 300}}
           >
             Submit
           </Button>

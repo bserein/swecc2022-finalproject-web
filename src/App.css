@@ -88,3 +88,14 @@
   display: flex;
   flex-direction: column;
 }
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  position: fixed !important;
+  z-index: 999 !important;
+  width: 100%;
+  background-color: orange !important;
+  opacity: 85% !important;
+}

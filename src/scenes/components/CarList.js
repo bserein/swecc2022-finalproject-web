@@ -17,7 +17,7 @@ export default function CarList(){
     if(carType){
       filteredList = filteredList.filter((cars) => cars.make === carType)
     } if (stars){
-      filteredList = filteredList.filter((cars) => cars.averageRating >= stars)
+      filteredList = filteredList.filter((cars) => cars.averageRating === Math.floor(stars))
     } if (seats){
       filteredList = filteredList.filter((cars) => cars.seatingCapacity === seats)
     }
@@ -34,6 +34,7 @@ export default function CarList(){
 
     return ( 
         <>
+        <div style={{textAlign: "center"}}>
       <span style={{marginTop: "70px" }}>make:</span>
      <Select defaultValue="make" style={{ width: 120, marginTop: "70px" }} onChange={setCarType}>
       <Option value="">All</Option>
@@ -71,6 +72,7 @@ export default function CarList(){
       <Option value={4}>⭐️⭐️⭐️⭐️</Option>
       <Option value={5}>⭐️⭐️⭐️⭐️⭐️</Option>
       </Select>
+      </div>
         <div className="cards-wrapper" style={{marginTop: 20}}>
       <Row gutter={16}>
         {!carsList

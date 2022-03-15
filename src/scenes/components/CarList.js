@@ -56,7 +56,7 @@ export default function CarList(){
       </Select>
         <div className="cards-wrapper" style={{marginTop: 20}}>
       <Row gutter={16}>
-        {filteredCars?.map((car) => {
+        {filteredCars.map((car) => {
           return (
             <Col key={car.id}>
                 <Link to={`/cars/${car.id}`}>

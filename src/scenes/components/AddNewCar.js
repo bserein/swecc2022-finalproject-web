@@ -7,14 +7,14 @@ export default function AddNewCar() {
 
   const [make, setMake] = useState();
   const [model, setModel] = useState();
-  const [image, setImage] = useState();
-  const [image2, setImage2] = useState();
-  const [image3, setImage3] = useState();
-  const [image4, setImage4] = useState();
-  const [description, setDescription] = useState();
-  const [description2, setDescription2] = useState();
-  const [description3, setDescription3] = useState();
-  const [description4, setDescription4] = useState();
+  // const [image, setImage] = useState();
+  // const [image2, setImage2] = useState();
+  // const [image3, setImage3] = useState();
+  // const [image4, setImage4] = useState();
+  // const [description, setDescription] = useState();
+  // const [description2, setDescription2] = useState();
+  // const [description3, setDescription3] = useState();
+  // const [description4, setDescription4] = useState();
   const [topSpeed, setTopSpeed] = useState();
   const [horsepower, setHorsepower] = useState();
   const [msrp, setMsrp] = useState();
@@ -37,14 +37,14 @@ export default function AddNewCar() {
       body: JSON.stringify({
         make,
         model,
-        photo: image,
-        photo2: image2,
-        photo3: image3,
-        photo4: image4,
-        description,
-        description2,
-        description3,
-        description4,
+        // photo: image,
+        // photo2: image2,
+        // photo3: image3,
+        // photo4: image4,
+        // description,
+        // description2,
+        // description3,
+        // description4,
         topSpeed,
         horsepower,
         msrp,
@@ -83,7 +83,7 @@ export default function AddNewCar() {
             onChange={(event) => setModel(event.target.value)}
           />
         </Form.Item>
-        <Form.Item label="Photo">
+        {/* <Form.Item label="Photo">
           <Input
           required
             placeholder="Please Input The Car Photos URL of The Front of the Car"
@@ -142,7 +142,7 @@ export default function AddNewCar() {
             placeholder="Please Input The Car Photos Description To The Best Of Your Abilities"
             onChange={(event) => setDescription4(event.target.value)}
           />
-        </Form.Item>
+        </Form.Item> */}
         <Form.Item label="Top Speed">
           <Input
           required

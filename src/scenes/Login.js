@@ -20,10 +20,11 @@ export default function Login({setToken, setIsUser}){
             },
             body: JSON.stringify({ email, password: hashedPassword})
         })
-        localStorage.setItem('email', email)
+        // localStorage.setItem('email', email)
         .then(response => response.json())
         .then(data => {
             setToken(data.token);
+            localStorage.setItem('token', data.token);
             navigate('/cars')
         })
         .catch(err => alert(err))

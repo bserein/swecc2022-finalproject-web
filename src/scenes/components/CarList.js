@@ -7,21 +7,23 @@ const { Meta } = Card;
 const { Option } = Select;
 export default function CarList(){
   const [cars, setCars] = useState([])
-  const [filteredCars, setFilteredCars] = useState([]);
   const [carType,setCarType] = useState();
+  const [seats, setSeats] = useState();
+  const [stars,setStars] = useState();
+  const [carsList, setCarsList] = useState()
 
   useEffect(() => {
-    // filter cars here;
-    console.log(`${carType} type changed`);
-    if(carType && cars) {
-        const filtered = cars.filter((car) => {
-          return car.make === carType;
-        })
-        setFilteredCars(filtered);
-    } else {
-      setFilteredCars(cars);
+    let filteredList = cars
+    if(carType){
+      filteredList = filteredList.filter((cars) => cars.make === carType)
+    } if (stars){
+      filteredList = filteredList.filter((cars) => cars.averageRating >= stars)
+    } if (seats){
+      filteredList = filteredList.filter((cars) => cars.seatingCapacity === seats)
     }
-  }, [cars, carType])
+    setCarsList(filteredList)
+  }, [carType, stars, seats, cars])
+
   
     useEffect(() => {
         fetch("https://final-project-bas.uk.r.appspot.com/cars")
@@ -30,14 +32,10 @@ export default function CarList(){
           .catch(alert);
       }, []);
 
-      function handleChange(value) {
-        console.log(`selected ${value}`)
-        setCarType(value);
-      }
-
     return ( 
         <>
-     <Select defaultValue="make" style={{ width: 120, marginTop: "70px" }} onChange={handleChange}>
+      <span style={{marginTop: "70px" }}>make:</span>
+     <Select defaultValue="make" style={{ width: 120, marginTop: "70px" }} onChange={setCarType}>
       <Option value="">All</Option>
       <Option value="Audi">Audi</Option>
       <Option value="BMW">BMW</Option>
@@ -54,9 +52,30 @@ export default function CarList(){
       <Option value="Tesla">Tesla</Option>
       <Option value="Toyota">Toyota</Option>
       </Select>
+      <span style={{marginTop: "70px" }}>seats</span>
+      <Select defaultValue="seats" style={{ width: 120, marginTop: "70px" }} onChange={setSeats}>
+      <Option value="">All</Option>
+      <Option value="2">2</Option>
+      <Option value="4">4</Option>
+      <Option value="5">5</Option>
+      <Option value="6-7">6-7</Option>
+      <Option value="7-8">7-8</Option>
+      <Option value="8">8</Option>
+      </Select>
+      <span style={{marginTop: "70px" }}>Ratings</span>
+      <Select defaultValue="Ratings" style={{ width: 120, marginTop: "70px" }} onChange={setStars}>
+      <Option value="">All</Option>
+      <Option value={1}>⭐️</Option>
+      <Option value={2}>⭐️⭐️</Option>
+      <Option value={3}>⭐️⭐️⭐️</Option>
+      <Option value={4}>⭐️⭐️⭐️⭐️</Option>
+      <Option value={5}>⭐️⭐️⭐️⭐️⭐️</Option>
+      </Select>
         <div className="cards-wrapper" style={{marginTop: 20}}>
       <Row gutter={16}>
-        {filteredCars.map((car) => {
+        {!carsList
+        ? <p>loading </p>
+        : carsList.map((car) => {
           return (
             <Col key={car.id}>
                 <Link to={`/cars/${car.id}`}>
@@ -70,7 +89,8 @@ export default function CarList(){
               </Link>
             </Col>
           );
-        })}
+        })
+        }
       </Row>
     </div>
     </>

@@ -22,6 +22,7 @@ export default function Signup({setToken, setIsUser}){
         .then(response => response.json())
         .then(data => {
             setToken(data.token);
+            localStorage.setItem('token', data.token);
             navigate('/cars')
         })
         .catch(err => alert(err))

@@ -6,12 +6,12 @@ import AddNewCar from './components/AddNewCar'
 import Header from "./Header";
 import Footer from "./Footer";
 
-export default function Main(){
+export default function Main({token, setToken}){
   
   
     return (
         <div style={{backgroundColor: "WhiteSmoke"}}>
-       <Header />
+       <Header token={token} setToken={setToken}/>
             <Routes>
               <Route path="/cars" element={<CarList />} />
               <Route path="/cars/:id" element={<CarDetail />} />

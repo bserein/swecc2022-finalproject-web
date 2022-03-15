@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function Header() {
+export default function Header({setToken}) {
   const navigate = useNavigate();
 
   const AddNew = () => {
@@ -9,9 +9,7 @@ export default function Header() {
   };
 
   const handleLogout = () => {
-    // setUser({});
-    // setUsername("");
-    // setPassword("");
+    setToken(null)
     localStorage.clear();
   };
 

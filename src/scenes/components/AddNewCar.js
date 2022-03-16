@@ -66,113 +66,114 @@ export default function AddNewCar() {
   return (
     <>
       <button onClick={goBackHandle} style={{marginTop: "70px" }}> Back to Home</button>
-      <div style={{textAlign: "center"}}>
+      <div>
       <div className="new-car-form">
       <h3 style={{textAlign: "center"}}>Please Be As Accurate As You Can</h3>
-      <Form layout={"layout"}>
-        <Form.Item label="Make">
+      <form className="flex-form">
+        <label > Make
           <Input
             placeholder="Example: Toyota"
+            //  value="Mercedes-Benz"
             onChange={(event) => setMake(event.target.value)}
           />
-        </Form.Item>
-        <Form.Item label="Model:">
+        </label> 
+        <label > Model
           <Input
             placeholder="Example: Camry"
             onChange={(event) => setModel(event.target.value)}
           />
-        </Form.Item>
-        {/* <Form.Item label="Photo">
+        </label>
+        {/* <label label="Photo">
           <Input
             placeholder="Please Input The Car Photos URL of The Front of the Car"
             type="url"
             onChange={(event) => setImage(event.target.value)}
           />
-        </Form.Item>
-        <Form.Item label="Description">
+        </label>
+        <label label="Description">
           <Input
             placeholder="Please Input The Car Photos Description To The Best Of Your Abilities"
             onChange={(event) => setDescription(event.target.value)}
           />
-        </Form.Item>
-        <Form.Item label="Photo">
+        </label>
+        <label label="Photo">
           <Input
             placeholder="Please Input The Car Photos URL of The Back of the Car"
             type="url"
             onChange={(event) => setImage2(event.target.value)}
           />
-        </Form.Item>
-        <Form.Item label="Description">
+        </label>
+        <label label="Description">
           <Input
             placeholder="Please Input The Car Photos Description To The Best Of Your Abilities"
             onChange={(event) => setDescription2(event.target.value)}
           />
-        </Form.Item>
-        <Form.Item label="Photo">
+        </label>
+        <label label="Photo">
           <Input
             placeholder="Please Input The Car Photos URL of The Front Interior of the Car"
             type="url"
             onChange={(event) => setImage3(event.target.value)}
           />
-        </Form.Item>
-        <Form.Item label="Description">
+        </label>
+        <label label="Description">
           <Input
             placeholder="Please Input The Car Photos Description To The Best Of Your Abilities"
             onChange={(event) => setDescription3(event.target.value)}
           />
-        </Form.Item>
-        <Form.Item label="Photo">
+        </label>
+        <label label="Photo">
           <Input
             placeholder="Please Input The Car Photos URL of The Back Interior of the Car"
             type="url"
             onChange={(event) => setImage4(event.target.value)}
           />
-        </Form.Item>
-        <Form.Item label="Description">
+        </label>
+        <label label="Description">
           <Input
             placeholder="Please Input The Car Photos Description To The Best Of Your Abilities"
             onChange={(event) => setDescription4(event.target.value)}
           />
-        </Form.Item> */}
-        <Form.Item label="Top Speed">
+        </label> */}
+        <label > Top Speed
           <Input
             placeholder="Example: 134"
             type="numeric"
             onChange={(event) => setTopSpeed(event.target.value)}
           />
-        </Form.Item>
-        <Form.Item label="Horsepower">
+        </label>
+        <label > Horsepower
           <Input
             placeholder="Example: 301"
             onChange={(event) => setHorsepower(event.target.value)}
           />
-        </Form.Item>
-        <Form.Item label="MSRP">
+        </label>
+        <label > MSRP
           <Input
             placeholder="Example: 26,320"
             onChange={(event) => setMsrp(event.target.value)}
           />
-        </Form.Item>
-        <Form.Item label="MPG">
+        </label>
+        <label > MPG
           <Input
             placeholder="Example: 28 / 39"
             onChange={(event) => setMpg(event.target.value)}
           />
-        </Form.Item>
-        <Form.Item label="Fuel Capacity">
+        </label>
+        <label > Fuel Capacity
           <Input
             placeholder="Example: 15.8"
             type="numeric"
             onChange={(event) => setFuelCapacity(event.target.value)}
           />
-        </Form.Item>
-        <Form.Item label="Seating Capacity">
+        </label>
+        <label > Seating Capacity
           <Input
             placeholder="Example: 5"
             type="numeric"
             onChange={(event) => setSeatingCapacity(event.target.value)}
           />
-        </Form.Item>
+        </label>
         <Form.Item>
           <Button
             type="submit"
@@ -182,7 +183,7 @@ export default function AddNewCar() {
             Submit
           </Button>
         </Form.Item>
-      </Form>
+      </form>
       </div>
       </div>
     </>

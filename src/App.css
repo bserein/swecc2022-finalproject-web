@@ -114,3 +114,10 @@
   text-align: center;
 }
 }
+
+.flex-form {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}

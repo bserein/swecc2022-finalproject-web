@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Rate, Button, message, Carousel } from "antd";
+import { Rate, Button, message, Carousel, Spin, Space } from "antd";
 
 
 export default function CarDetail() {
@@ -38,7 +38,9 @@ export default function CarDetail() {
   }, []);
 
   if (!car.photo) {
-    return <p>Loading</p>;
+    return <Space style={{textAlign: "center", marginTop: 80, marginLeft: 200}}>
+    <Spin size="large" />
+  </Space>;
   }
 
   return (
@@ -47,16 +49,16 @@ export default function CarDetail() {
     <section className="detail-wrapper" style={{marginTop: 20}}>
       <Carousel autoplay>
     <div>
-      <img src={car.photo} alt={`This photo shows ${car.description}`} />
+      <img src={car.photo} alt={`This shows a ${car.description}`} />
     </div>
     <div>
-    <img src={car.photo2} alt={`This photo shows ${car.description2}`} />
+    <img src={car.photo2} alt={`This shows a ${car.description2}`} />
     </div>
     <div>
-    <img src={car.photo3} alt={`This photo shows ${car.description3}`} />
+    <img src={car.photo3} alt={`This shows a ${car.description3}`} />
     </div>
     <div>
-    <img src={car.photo4} alt={`This photo shows ${car.description4}`} />
+    <img src={car.photo4} alt={`This shows a ${car.description4}`} />
     </div>
   </Carousel>
       <div className="car-detail-wrapper">

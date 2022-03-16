@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Card, Rate, Col, Row, Select } from 'antd';
+import { Card, Rate, Col, Row, Select, BackTop, Spin, Space } from 'antd';
 import { Link } from "react-router-dom";
 
 
@@ -31,6 +31,7 @@ export default function CarList(){
           .then((data) => setCars(data))
           .catch(alert);
       }, []);
+
 
     return ( 
         <>
@@ -72,11 +73,15 @@ export default function CarList(){
       <Option value={4}>⭐️⭐️⭐️⭐️</Option>
       <Option value={5}>⭐️⭐️⭐️⭐️⭐️</Option>
       </Select>
+      
       </div>
         <div className="cards-wrapper" style={{marginTop: 20}}>
       <Row gutter={16}>
         {!carsList
-        ? <p>loading </p>
+        ? 
+      <Space style={{textAlign: "center", marginTop: 80, marginLeft: 200}}>
+        <Spin size="large" />
+      </Space>
         : carsList.map((car) => {
           return (
             <Col key={car.id}>
@@ -95,6 +100,8 @@ export default function CarList(){
         }
       </Row>
     </div>
+    
+    <BackTop />
     </>
     )
 }

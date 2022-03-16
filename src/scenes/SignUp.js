@@ -1,14 +1,19 @@
 import { useState } from "react";
 import bcrypt from "bcryptjs";
 import { useNavigate } from "react-router-dom";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
+import { app } from '../ConnectAuth'
 
 const salt = "$2b$10$WaC2/VZrG3qSl15nAfN0Pu"
 
-export default function Signup({setToken, setIsUser}){
+export default function Signup({setToken, setIsUser }){
+    // const { setIsUser } = useContext(UserContext);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate()
-  
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth(app);
+
     const handleSubmit = (event) => {
         event.preventDefault()
         const hashedPassword = bcrypt.hashSync(password, salt)
@@ -28,10 +33,23 @@ export default function Signup({setToken, setIsUser}){
         .catch(err => alert(err))
     }
 
+    // const handleGoogleLogin = () => {
+    //     signInWithPopup(auth, provider)
+    //     //this will return a promise
+    //     .then(result => {
+    //         //setUser
+    //         setIsUser(result.user)
+    //         //navigate to home
+    //         navigate('/cars')
+    //         //this will take you to the welcome page
+    //     })
+    //     .catch(alert)
+    // }
+
     return (
         <>
-        <div>
-         <h1>Sign Up</h1>
+        <div className="signin-login" >
+         <h1 className="signin-login-text">Sign Up</h1>
          <form onSubmit={handleSubmit}>
              <label> Email:
                 <input type="email" value={email} onChange={event => setEmail(event.target.value)} />
@@ -41,10 +59,22 @@ export default function Signup({setToken, setIsUser}){
              </label> <br />
              <input type="submit" value="Sign Up" />
          </form> <br />
-         <button onClick={() => setIsUser(true)}>
+         <span>Already a user? </span>
+         <button onClick={() => setIsUser(true)}
+          className="round-buttons">
             Login 
             </button>
+            <p>-------------or------------</p>
+            <button 
+             className="round-buttons"
+        // onClick={handleGoogleLogin}
+        style={{
+            backgroundColor: 'black', 
+            color: 'white', 
+            border: 'none'}}>
+                Sign in with Google</button>
             </div>
         </>
+        
     )
 }

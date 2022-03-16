@@ -24,10 +24,10 @@ export default function AddNewCar() {
   
 
   const addNewCarInfo = (event) => {
-    // if( === ""){
-    //   message.error("uh oh looks like you forgot to put a rating")
-    //   return
-    // }
+    if(!make || !model || !topSpeed || !horsepower || !msrp || !mpg || !fuelCapacity || !seatingCapacity){
+      message.error("Uh Oh Looks Like You Forgot To Input A Field")
+      return
+    }
     event.preventDefault();
     fetch("https://final-project-bas.uk.r.appspot.com/cars/addcar", {
       method: "POST",

@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import CarList from "./components/CarList";
 import CarDetail from "./components/CarDetails";
-import { useState } from "react";
 import AddNewCar from './components/AddNewCar'
 import Header from "./Header";
 import Footer from "./Footer";

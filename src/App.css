@@ -89,6 +89,7 @@
   flex-direction: column;
 }
 
+@media all and (min-width: 480px) {
 .header-nav {
     display: flex;
     justify-content: space-between;
@@ -98,4 +99,19 @@
   width: 100%;
   background-color: orange !important;
   opacity: 85% !important;
+}
+
+.signin-login {
+  margin-top: 200px;
+  width: 300px;
+  border: 1px solid gray;
+  padding: 50px;
+  margin: 20px;
+
+}
+
+.signin-login-text {
+  color: blue;
+  text-align: center;
+}
 }

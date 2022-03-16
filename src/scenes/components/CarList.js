@@ -36,8 +36,7 @@ export default function CarList(){
     return ( 
         <>
         <div style={{textAlign: "left", marginLeft: "15px"}}>
-      {/* <span style={{marginTop: "70px" }}>make:</span> */}
-     <Select defaultValue="Makes" style={{ width: 120, marginTop: "70px" }} onChange={setCarType}>
+     <Select defaultValue="Makes" style={{ width: 120, marginTop: "60px" }} onChange={setCarType}>
       <Option value="">Makes</Option>
       <Option value="Audi">Audi</Option>
       <Option value="BMW">BMW</Option>
@@ -54,7 +53,6 @@ export default function CarList(){
       <Option value="Tesla">Tesla</Option>
       <Option value="Toyota">Toyota</Option>
       </Select>
-      {/* <span style={{marginTop: "70px" }}>seats</span> */}
       <Select defaultValue="Seats" style={{ width: 120, marginTop: "70px" }} onChange={setSeats}>
       <Option value="">Seats</Option>
       <Option value="2">2</Option>
@@ -64,7 +62,6 @@ export default function CarList(){
       <Option value="7-8">7-8</Option>
       <Option value="8">8</Option>
       </Select>
-      {/* <span style={{marginTop: "70px" }}>Ratings</span> */}
       <Select defaultValue="Stars" style={{ width: 120, marginTop: "70px" }} onChange={setStars}>
       <Option value="">Stars</Option>
       <Option value={1}>⭐️</Option>
@@ -75,7 +72,7 @@ export default function CarList(){
       </Select>
       
       </div>
-        <div className="cards-wrapper" style={{marginTop: 70}}>
+        <div className="cards-wrapper" style={{marginTop: 20}}>
       <Row gutter={16}>
         {!carsList
         ? 

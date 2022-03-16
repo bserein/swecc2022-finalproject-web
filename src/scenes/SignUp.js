@@ -56,12 +56,11 @@ export default function Signup({setToken, setIsUser }){
             <div className="submit">
               <button type="submit" value="Sign Up" className="button-signin-login">Create</button>
             </div>
-            <span>Already a user? </span>
+            <span style={{marginTop: "8px"}}>Already a user? </span>
          <button onClick={() => setIsUser(true)}
           className="button-signin-login">
             Login 
             </button>
-            
           </form>
         </div>
       </div>

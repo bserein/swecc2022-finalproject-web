@@ -37,7 +37,7 @@ export default function CarList(){
         <>
         <div style={{textAlign: "center"}}>
       <span style={{marginTop: "70px" }}>make:</span>
-     <Select defaultValue="make" style={{ width: 120, marginTop: "70px" }} onChange={setCarType}>
+     <Select defaultValue="All" style={{ width: 120, marginTop: "70px" }} onChange={setCarType}>
       <Option value="">All</Option>
       <Option value="Audi">Audi</Option>
       <Option value="BMW">BMW</Option>
@@ -55,7 +55,7 @@ export default function CarList(){
       <Option value="Toyota">Toyota</Option>
       </Select>
       <span style={{marginTop: "70px" }}>seats</span>
-      <Select defaultValue="seats" style={{ width: 120, marginTop: "70px" }} onChange={setSeats}>
+      <Select defaultValue="All" style={{ width: 120, marginTop: "70px" }} onChange={setSeats}>
       <Option value="">All</Option>
       <Option value="2">2</Option>
       <Option value="4">4</Option>
@@ -65,7 +65,7 @@ export default function CarList(){
       <Option value="8">8</Option>
       </Select>
       <span style={{marginTop: "70px" }}>Ratings</span>
-      <Select defaultValue="Ratings" style={{ width: 120, marginTop: "70px" }} onChange={setStars}>
+      <Select defaultValue="All" style={{ width: 120, marginTop: "70px" }} onChange={setStars}>
       <Option value="">All</Option>
       <Option value={1}>⭐️</Option>
       <Option value={2}>⭐️⭐️</Option>

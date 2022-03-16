@@ -89,7 +89,7 @@
   flex-direction: column;
 }
 
-@media all and (min-width: 480px) {
+@media all and (min-width: 250px) {
 .header-nav {
     display: flex;
     justify-content: space-between;

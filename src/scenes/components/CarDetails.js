@@ -14,7 +14,7 @@ export default function CarDetail() {
       message.error("Uh Oh Looks Like You Forgot To Put A Rating")
       return
     }
-    fetch(`https://final-project-bas.uk.r.appspot.com/cars/${params.id}`, {
+    fetch(`https://final-project-bas.uk.r.appspot.com/${params.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -22,16 +22,16 @@ export default function CarDetail() {
       body: JSON.stringify({ rating: rating }),
     })
     .then((response) => response.json())
-    .then(navigate('/cars'))
+    .then(navigate('/'))
     .then(success => message.success('Thank You For Your Rating'))
   }
 
   const goBackHandle = () => {
-    navigate('/cars')
+    navigate('/')
   }
 
   useEffect(() => {
-    fetch(`https://final-project-bas.uk.r.appspot.com/cars/${params.id}`)
+    fetch(`https://final-project-bas.uk.r.appspot.com/${params.id}`)
       .then((response) => response.json())
       .then((data) => setCar(data))
       .catch(alert);

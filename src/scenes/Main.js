@@ -12,9 +12,9 @@ export default function Main({setToken}){
         <div style={{backgroundColor: "WhiteSmoke"}}>
        <Header setToken={setToken}/>
             <Routes>
-              <Route path="/cars" element={<CarList />} />
-              <Route path="/cars/:id" element={<CarDetail />} />
-              <Route path="/cars/addcar" element={<AddNewCar />} />
+              <Route path="/" element={<CarList />} />
+              <Route path="/:id" element={<CarDetail />} />
+              <Route path="/addcar" element={<AddNewCar />} />
             </Routes>
          <Footer />
       </div>

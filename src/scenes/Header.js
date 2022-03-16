@@ -7,7 +7,7 @@ export default function Header({setToken}) {
   const navigate = useNavigate();
 
   const AddNew = () => {
-    navigate("/cars/addcar");
+    navigate("/addcar");
   };
 
   const handleLogout = () => {
@@ -31,7 +31,7 @@ export default function Header({setToken}) {
     <section
      className="header-nav"
     >
-      <Link to={`/cars`}>
+      <Link to={'/'}>
         <svg
           width="310"
           height="2rem"

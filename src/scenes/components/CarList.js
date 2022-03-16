@@ -26,7 +26,7 @@ export default function CarList(){
 
   
     useEffect(() => {
-        fetch("https://final-project-bas.uk.r.appspot.com/cars")
+        fetch("https://final-project-bas.uk.r.appspot.com/")
           .then((response) => response.json())
           .then((data) => setCars(data))
           .catch(alert);
@@ -82,7 +82,7 @@ export default function CarList(){
         : carsList.map((car) => {
           return (
             <Col key={car.id}>
-                <Link to={`/cars/${car.id}`}>
+                <Link to={`/${car.id}`}>
               <Card
                 hoverable
                 cover={<img alt={`pictures of ${car.description}`} src={car.photo}/>}

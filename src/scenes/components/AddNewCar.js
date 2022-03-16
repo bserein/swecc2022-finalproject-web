@@ -29,7 +29,7 @@ export default function AddNewCar() {
       return
     }
     event.preventDefault();
-    fetch("https://final-project-bas.uk.r.appspot.com/cars/addcar", {
+    fetch("https://final-project-bas.uk.r.appspot.com/addcar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -53,14 +53,14 @@ export default function AddNewCar() {
         seatingCapacity,
       }),
     })
-          .then(navigate("/cars"))
+          .then(navigate("/"))
           .then((success) =>
             message.success("Thank you, an admin will review your information")
           );       
   };
 
   const goBackHandle = () => {
-    navigate('/cars')
+    navigate('/')
   }
 
   return (

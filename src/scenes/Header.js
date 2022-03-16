@@ -35,7 +35,7 @@ export default function Header({setToken}) {
         <svg
           width="310"
           height="2rem"
-          viewBox="0 0 310 50"
+          viewBox="0 0 480 50"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           style={{ marginTop: "8px"}}
@@ -54,7 +54,7 @@ export default function Header({setToken}) {
       </Link>
       
   <Dropdown overlay={menu} placement="bottomRight" >
-      <Button style={{paddingRight: "25px"}}>Settings</Button>
+      <Button style={{marginRight: "15px"}}>Settings</Button>
     </Dropdown>
     </section>
   );

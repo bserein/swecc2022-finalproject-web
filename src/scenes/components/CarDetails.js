@@ -45,7 +45,7 @@ export default function CarDetail() {
 
   return (
     <>
-    <button onClick={goBackHandle} style={{marginTop: "70px" }}> Back to Home</button>
+    <button onClick={goBackHandle} style={{marginTop: "50px" }}> Back to Home</button>
     <section className="detail-wrapper" style={{marginTop: 20}}>
       <Carousel autoplay>
     <div>

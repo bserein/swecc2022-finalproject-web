@@ -26,7 +26,7 @@ export default function CarList(){
 
   
     useEffect(() => {
-        fetch("https://final-project-bas.uk.r.appspot.com/")
+        fetch("http://3.95.66.37:4325/")
           .then((response) => response.json())
           .then((data) => setCars(data))
           .catch(alert);

@@ -29,7 +29,7 @@ export default function AddNewCar() {
       return
     }
     event.preventDefault();
-    fetch("https://final-project-bas.uk.r.appspot.com/addcar", {
+    fetch("http://3.95.66.37:4325/addcar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

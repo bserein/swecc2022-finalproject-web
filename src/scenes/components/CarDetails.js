@@ -14,7 +14,7 @@ export default function CarDetail() {
       message.error("Uh Oh Looks Like You Forgot To Put A Rating")
       return
     }
-    fetch(`https://final-project-bas.uk.r.appspot.com/${params.id}`, {
+    fetch(`http://3.95.66.37:4325/${params.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export default function CarDetail() {
   }
 
   useEffect(() => {
-    fetch(`https://final-project-bas.uk.r.appspot.com/${params.id}`)
+    fetch(`http://3.95.66.37:4325/${params.id}`)
       .then((response) => response.json())
       .then((data) => setCar(data))
       .catch(alert);

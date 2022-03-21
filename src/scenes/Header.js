@@ -1,7 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Menu, Dropdown, Button } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
 
 export default function Header({setToken}) {
   const navigate = useNavigate();

@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Created A Car Rating Site with the option to add additional vehicles.
+<center>
+This website is both responsive and accessible.
+<br /> 
+<br />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## <center> Login Page  
+There is also a Sign Up page that is similar to the Sign In page.
+![sign-in page has a baby blue background with a signin in page in the middle. Two inputs for email and password. Under the password input is the text "Password should be eight characters in length" after two orange buttons that say Login and Sign Up.](./signin_page.png)
 
-## Available Scripts
 
-In the project directory, you can run:
+## <br />  <center> Main Page
+Here you have the opportunity to browse the selection of cars and filter to look for the car you have in mind.
+<br />
 
-### `npm start`
+![Main page of the website with six car pictures starting from  the first row, left to right (black Audi A8, white Nissan GTR, white Jeep Gladiator, white Toyota Corolla, white Honda Pilot, and white Tesla Model X)](./main_page.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## <br /> <center> Detail Page
+Rate the cars you have with a star system, 1 star being the worst and 5 stars being the best. It also includes some information about the vehicle.
+<br />
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![The Detail page shows an image of Chipotle's food and shows 3 stars with the text 157. This means 157 people have rated the restaurant and the average rating is 3 stars. It shows the address of the Chipotle at 7028 W palmetto Park Road Ste 106, Boca Raton, FL 33433. Then at the bottom with a Rate Chipotle showing 5 empty stars to give your rating and a submit button at the bottom to submit the rating](./Detail_page.png)
 
-### `npm test`
+## <br /> <center> Add A New Car Page
+You can add info of a car you would like to see in the selection, which will be sent to be reviewed by an admin after to verify the accuracy of the submission.
+<br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![a submission form that asks for the make, model, top speed, horsepower, msrp, mpg, fuel capacity, seating capacity, and lastly the submit button on the bottom.](./Add_a_new_car_page.png)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

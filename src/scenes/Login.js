@@ -52,7 +52,7 @@ export default function Login({setToken, setIsUser}){
               </label>
             </div>
             <div className="info">
-              <small>Password must be eight characters in length.</small>
+              <small>Password should be eight characters in length.</small>
             </div>
             <div className="submit">
               <button type="submit" value="Login" className="button-signin-login">Login</button>
